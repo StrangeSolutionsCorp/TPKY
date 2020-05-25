@@ -1,0 +1,14 @@
+﻿  main.cpp
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(138,25): warning C4305:  +=: усечение из "double" в "float"
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(144,25): warning C4305:  +=: усечение из "double" в "float"
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(154,27): warning C4305:  +=: усечение из "double" в "float"
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(160,27): warning C4305:  +=: усечение из "double" в "float"
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(169,27): warning C4305:  -=: усечение из "double" в "float"
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(175,27): warning C4305:  -=: усечение из "double" в "float"
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(237,40): warning C4244:  аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(237,30): warning C4244:  аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(248,25): warning C4244:  =: преобразование "double" в "float", возможна потеря данных
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(249,25): warning C4244:  =: преобразование "double" в "float", возможна потеря данных
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(254,26): warning C4244:  =: преобразование "double" в "float", возможна потеря данных
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(255,46): warning C4244:  =: преобразование "double" в "float", возможна потеря данных
+  TPKY.vcxproj -> C:\Users\MFS\source\repos\TPKY\Debug\TPKY.exe
