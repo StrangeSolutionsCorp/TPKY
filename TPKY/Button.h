@@ -6,6 +6,8 @@ using namespace sf;
 class Button {
 	int xP;
 	int yP;
+	int xL;
+	int yL;
 	Sprite curr;
 	Sprite text;
 	Image text1;
@@ -16,10 +18,12 @@ class Button {
 	bool chf;
 	Font font;
 public:
-	Button(int x, int y, const char* first, const char* second, const String& string)
+	Button(int x, int y, const char* first, const char* second, const String& string, int w, int h)
 	{
 		xP = x;
 		yP = y;
+		xL = w;
+		yL = h;
 		font.loadFromFile("arial.ttf");
 		text1.loadFromFile(first);
 		m_t1.loadFromImage(text1);

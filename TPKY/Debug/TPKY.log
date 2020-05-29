@@ -1,19 +1,32 @@
-﻿  main.cpp
-C:\Users\MFS\source\repos\TPKY\TPKY\Button.h(28,23): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
-C:\Users\MFS\source\repos\TPKY\TPKY\Button.h(28,20): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
-C:\Users\MFS\source\repos\TPKY\TPKY\Button.h(33,24): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
-C:\Users\MFS\source\repos\TPKY\TPKY\Button.h(33,21): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
-C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(265,26): warning C4305:  +=: усечение из "double" в "float"
-C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(283,26): warning C4305:  +=: усечение из "double" в "float"
-C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(305,28): warning C4305:  +=: усечение из "double" в "float"
-C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(325,28): warning C4305:  +=: усечение из "double" в "float"
-C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(348,28): warning C4305:  -=: усечение из "double" в "float"
-C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(368,28): warning C4305:  -=: усечение из "double" в "float"
-C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(442,41): warning C4244:  аргумент: преобразование "double" в "float", возможна потеря данных
-C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(442,31): warning C4244:  аргумент: преобразование "double" в "float", возможна потеря данных
-C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(451,26): warning C4244:  =: преобразование "double" в "float", возможна потеря данных
-C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(452,26): warning C4244:  =: преобразование "double" в "float", возможна потеря данных
-C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(478,27): warning C4244:  =: преобразование "double" в "float", возможна потеря данных
-C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(479,47): warning C4244:  =: преобразование "double" в "float", возможна потеря данных
-C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(201,6): warning C4101:  coolider: неиспользованная локальная переменная
+﻿  Checker.cpp
+  main.cpp
+C:\Users\MFS\source\repos\TPKY\TPKY\Button.h(32,23): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\MFS\source\repos\TPKY\TPKY\Button.h(32,20): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\MFS\source\repos\TPKY\TPKY\Button.h(37,24): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\MFS\source\repos\TPKY\TPKY\Button.h(37,21): warning C4244:  аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(211,30): warning C4305:  аргумент: усечение из "double" в "float"
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(221,30): warning C4305:  аргумент: усечение из "double" в "float"
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(422,42): warning C4244:  аргумент: преобразование "float" в "sf::Int64", возможна потеря данных
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(435,42): warning C4244:  аргумент: преобразование "float" в "sf::Int64", возможна потеря данных
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(451,42): warning C4244:  аргумент: преобразование "float" в "sf::Int64", возможна потеря данных
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(464,42): warning C4244:  аргумент: преобразование "float" в "sf::Int64", возможна потеря данных
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(473,26): warning C4305:  +=: усечение из "double" в "float"
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(513,26): warning C4305:  +=: усечение из "double" в "float"
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(557,28): warning C4305:  +=: усечение из "double" в "float"
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(577,28): warning C4305:  +=: усечение из "double" в "float"
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(600,28): warning C4305:  -=: усечение из "double" в "float"
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(620,28): warning C4305:  -=: усечение из "double" в "float"
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(645,35): warning C4244:  =: преобразование "double" в "float", возможна потеря данных
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(647,26): warning C4244:  =: преобразование "int" в "float", возможна потеря данных
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(654,35): warning C4244:  =: преобразование "double" в "float", возможна потеря данных
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(656,26): warning C4244:  =: преобразование "int" в "float", возможна потеря данных
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(660,41): warning C4244:  аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(660,31): warning C4244:  аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(669,26): warning C4244:  =: преобразование "double" в "float", возможна потеря данных
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(670,26): warning C4244:  =: преобразование "double" в "float", возможна потеря данных
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(697,27): warning C4244:  =: преобразование "double" в "float", возможна потеря данных
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(698,47): warning C4244:  =: преобразование "double" в "float", возможна потеря данных
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(753,38): warning C4244:  аргумент: преобразование "float" в "sf::Int64", возможна потеря данных
+  Создание кода...
+C:\Users\MFS\source\repos\TPKY\TPKY\main.cpp(754,38): warning C4244:  аргумент: преобразование "float" в "sf::Int64", возможна потеря данных
   TPKY.vcxproj -> C:\Users\MFS\source\repos\TPKY\Debug\TPKY.exe

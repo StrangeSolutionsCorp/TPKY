@@ -2,13 +2,16 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <sstream>
 #include <math.h>
 #include <stdlib.h> 
 #include <dos.h>
 #include "Button.h"
 #include "Coll.h"
+#include "St_ch.h"
 #include <SFML\Window/Mouse.hpp>
 #include <SFML\Graphics/Text.hpp>
+#include "Checker.h"
 
 using namespace sf;
 
@@ -22,7 +25,7 @@ class ballista
 public:
 	float x;
 	float y;
-	float mass;
+	int mass;
 	float speed;
 	float angle;
 	float petrol;
@@ -42,10 +45,20 @@ public:
 	float angle;
 };
 
-int drawMenu(RenderWindow& window, int actwind);
+String toString(Int64 integer)
+{
+	std::ostringstream os;
+	os << integer;
+	return os.str();
+}
 
 int main()
 {
+	if (checker())
+	{
+		system("pause");
+		return 1;
+	}
 	RenderWindow window(VideoMode(WIGHT, HEIGHT), "TEST");
 	int actwind = 0;
 
@@ -75,7 +88,7 @@ int main()
 	Balli1.y = FLOOR-50;
 	Balli1.speed = 0;
 	Balli1.angle = 0;
-	Balli1.mass = 50;
+	Balli1.mass = 35;
 	Balli1.petrol = PETROL;
 
 	Image deg_1;
@@ -131,7 +144,7 @@ int main()
 	Balli2.y = FLOOR-50;
 	Balli2.speed = 0;
 	Balli2.angle = 0;
-	Balli2.mass = 50;
+	Balli2.mass = 35;
 	Balli2.petrol = PETROL;
 
 	Image deg_2;
@@ -189,11 +202,78 @@ int main()
 	sky_s.setTexture(sky_t);
 	sky_s.setPosition(0, 0);
 
-	Button* BattonExit1;
-	BattonExit1 = new Button(500, 200, "bu2.png", "bu1.png", "Test");
+	Image pet1;
+	pet1.loadFromFile("petrol1.png");
+	Texture pet1_t;
+	pet1_t.loadFromImage(pet1);
+	Sprite pet1_s;
+	pet1_s.setTexture(pet1_t);
+	pet1_s.setScale(0.025, 0.025);
+	pet1_s.setPosition(65, 10);
+	Text pet1_text;
+
+	Image pet2;
+	pet2.loadFromFile("petrol2.png");
+	Texture pet2_t;
+	pet2_t.loadFromImage(pet2);
+	Sprite pet2_s;
+	pet2_s.setTexture(pet2_t);
+	pet2_s.setScale(0.025, 0.025);
+	pet2_s.setPosition(1145, 10);
+	Text pet2_text;
+
+	Font font;
+	font.loadFromFile("arial.ttf");
+	pet1_text.setFont(font);
+	pet1_text.setString("100");
+	pet1_text.setCharacterSize(25);
+	pet1_text.setFillColor(sf::Color::Black);
+	pet1_text.setPosition(110, 10);
+	pet2_text.setFont(font);
+	pet2_text.setString("100");
+	pet2_text.setCharacterSize(25);
+	pet2_text.setFillColor(sf::Color::Black);
+	pet2_text.setPosition(1140, 10);
+
+	Image rul;
+	rul.loadFromFile("rul.png");
+	Texture rul_t;
+	rul_t.loadFromImage(rul);
+	Sprite rul_s;
+	rul_s.setTexture(rul_t);
+	rul_s.setPosition(250, 50);
+
+	Image w1;
+	w1.loadFromFile("w1.png");
+	Texture w1_t;
+	w1_t.loadFromImage(w1);
+	Sprite w1_s;
+	w1_s.setTexture(w1_t);
+	w1_s.setPosition(250, 50);
+
+	Image w2;
+	w1.loadFromFile("w2.png");
+	Texture w2_t;
+	w2_t.loadFromImage(w1);
+	Sprite w2_s;
+	w2_s.setTexture(w2_t);
+	w2_s.setPosition(250, 50);
+
+	Button* Start;
+	Start = new Button(500, 100, "bu2.png", "bu1.png", "Test", 200, 100);
+	Button* Rules;
+	Rules = new Button(500, 225, "bu4.png", "bu3.png", "Test", 200, 100);
+	Button* Ex_r;
+	Ex_r = new Button(950, 50, "bu6.png", "bu5.png", "Test", 50, 50);
+	Button* Ex_g;
+	Ex_g = new Button(0, 0, "bu6.png", "bu5.png", "Test", 50, 50);
+	Button* Re_g;
+	Re_g = new Button(600, FLOOR, "bu8.png", "bu7.png", "Test", 200, 100);
 
 	Vector2i mous;
 	Text tecst;
+
+	st_ch st_line;
 
 	double time = 0;
 	int shoot_fl = 0;
@@ -201,8 +281,9 @@ int main()
 	int coolider;
 	int mode = 0;
 	Time t2 = milliseconds(250);
+	int mas_res;
 
-	bool draw[4] = {false, true, true, true};
+	bool draw[11] = {false, true, true, true, true, false, false, true, false, false, false};
 
 
 	while (window.isOpen())
@@ -210,8 +291,119 @@ int main()
 		Event event;
 		while (window.pollEvent(event))
 		{
-			if (event.type == Event::Closed)
+			switch (event.type)
+			{
+			case Event::Closed:
+			{
 				window.close();
+				break;
+			}
+			case Event::MouseButtonPressed:
+			{
+				if (event.mouseButton.button == Mouse::Left)
+				{
+					std::cout << "the left button was pressed" << std::endl;
+					if ((Ex_g->isPress(window, event.mouseButton.x, event.mouseButton.y)))
+					{
+						window.close();
+						break;
+					}
+					if (mode == 1)
+					{
+						for (int i = 0; i < 4; i++)
+							if ((mas_res = st_line.isPress(window, mous.x, mous.y, i, role)) > 0)
+								if (role == 0)
+									Balli1.mass = mas_res;
+								else
+									Balli2.mass = mas_res;
+					}
+					else
+					{
+						if ((mode == 2) || (mode == 3))
+						{
+							if ((Re_g->isPress(window, event.mouseButton.x, event.mouseButton.y)))
+							{
+									bal_t.update(ballista1);
+									bal1_s.setPosition(100, FLOOR - 50);
+									Balli1.x = 100;
+									Balli1.y = FLOOR - 50;
+									Balli1.speed = 0;
+									Balli1.angle = 0;
+									Balli1.mass = 35;
+									Balli1.petrol = PETROL;
+									d_t.update(deg_1);
+									d1_hud.setPosition(80, 70);
+									sc_t.update(sc_1);
+									sc1_hud.setPosition(80, 170);
+									bal2_t.update(ballista2);
+									bal2_s.setPosition(1100, FLOOR - 50);
+									Balli2.x = 1100;
+									Balli2.y = FLOOR - 50;
+									Balli2.speed = 0;
+									Balli2.angle = 0;
+									Balli2.mass = 35;
+									Balli2.petrol = PETROL;
+									d2_t.update(deg_2);
+									d2_hud.setPosition(1100, 70);
+									sc2_t.update(sc_2);
+									sc2_hud.setPosition(1150, 170);
+									time = 0;
+									shoot_fl = 0;
+									role = 0;
+									coolider = 0;
+									mode = 0;
+									mas_res = 35;
+									draw[0] = false;
+									draw[1] = true;
+									draw[2] = true;
+									draw[3] = true;
+									draw[4] = true;
+									draw[5] = false;
+									draw[6] = false;
+									draw[7] = true;
+									draw[8] = false;
+									draw[9] = false;
+									draw[10] = false;
+									st_line.state[0] = 0;
+									st_line.state[1] = 3;
+									st_line.state[2] = 0;
+									st_line.state[3] = 0;
+									st_line.true_state[0] = 0;
+									st_line.true_state[1] = 3;
+									st_line.true_state[2] = 0;
+									st_line.true_state[3] = 0;
+									st_line.chf[0] = 0;
+									st_line.chf[1] = 1;
+									st_line.chf[2] = 0;
+									st_line.chf[3] = 0;
+							}
+						}
+						else
+						{
+							if ((Start->isPress(window, event.mouseButton.x, event.mouseButton.y)) && (mode == 0))
+							{
+								mode = 1;
+								draw[3] = draw[4] = false;
+							}
+							if ((Rules->isPress(window, event.mouseButton.x, event.mouseButton.y)))
+							{
+								draw[5] = draw[6] = true;
+								mode = 4;
+							}
+							if ((Ex_r->isPress(window, event.mouseButton.x, event.mouseButton.y)))
+							{
+								draw[5] = draw[6] = false;
+								mode = 0;
+							}
+						}
+					}
+				}
+				break;
+
+			}
+			default:
+				break;
+			}
 		}
 		if (mode == 1)
 		{
@@ -219,20 +411,28 @@ int main()
 			{
 				if (role == 0)
 				{
-					if (Balli1.petrol >= 0)
+					if (Balli1.petrol >= 2.5)
 					{
-						bal1_s.move(-0.5, 0);
-						Balli1.x -= 0.5;
+						if (Balli1.x >= 1)
+						{
+							bal1_s.move(-0.5, 0);
+							Balli1.x -= 0.5;
+						}
 						Balli1.petrol -= 2.5;
+						pet1_text.setString(toString(Balli1.petrol));
 					}
 				}
 				else if (role == 1)
 				{
-					if (Balli2.petrol >= 0)
+					if (Balli2.petrol >= 2.5)
 					{
-						bal2_s.move(-0.5, 0);
-						Balli2.x -= 0.5;
+						if (Balli2.x >= 1)
+						{
+							bal2_s.move(-0.5, 0);
+							Balli2.x -= 0.5;
+						}
 						Balli2.petrol -= 2.5;
+						pet2_text.setString(toString(Balli2.petrol));
 					}
 				}
 			}
@@ -240,20 +440,28 @@ int main()
 			{
 				if (role == 0)
 				{
-					if (Balli1.petrol >= 0)
+					if (Balli1.petrol >= 2.5)
 					{
-						bal1_s.move(0.5, 0);
-						Balli1.x += 0.5;
+						if (Balli1.x >= 1)
+						{
+							bal1_s.move(0.5, 0);
+							Balli1.x += 0.5;
+						}
 						Balli1.petrol -= 2.5;
+						pet1_text.setString(toString(Balli1.petrol));
 					}
 				}
 				else if (role == 1)
 				{
-					if (Balli2.petrol >= 0)
+					if (Balli2.petrol >= 2.5)
 					{
-						bal2_s.move(0.5, 0);
-						Balli2.x += 0.5;
+						if (Balli1.x >= 1)
+						{
+							bal2_s.move(0.5, 0);
+							Balli2.x += 0.5;
+						}
 						Balli2.petrol -= 2.5;
+						pet2_text.setString(toString(Balli2.petrol));
 					}
 				}
 			}
@@ -264,17 +472,39 @@ int main()
 					if (Balli1.speed <= 61)
 						Balli1.speed += 0.1;
 					if (Balli1.speed == 0)
+					{
 						bal_t.update(b1_anim[0]);
+						sc_t.update(sc1_anim[0]);
+					}
 					if (Balli1.speed >= 10)
+					{
 						bal_t.update(b1_anim[1]);
+						sc_t.update(sc1_anim[1]);
+					}
 					if (Balli1.speed >= 20)
+					{
 						bal_t.update(b1_anim[2]);
+						sc_t.update(sc1_anim[2]);
+					}
 					if (Balli1.speed >= 30)
+					{
 						bal_t.update(b1_anim[3]);
+						sc_t.update(sc1_anim[3]);
+					}
 					if (Balli1.speed >= 40)
+					{
 						bal_t.update(b1_anim[4]);
+						sc_t.update(sc1_anim[4]);
+					}
 					if (Balli1.speed >= 50)
+					{
 						bal_t.update(b1_anim[5]);
+						sc_t.update(sc1_anim[5]);
+					}
+					if (Balli1.speed >= 60)
+					{
+						sc_t.update(sc1_anim[6]);
+					}
 					std::cout << "spd++ = " << Balli1.speed << std::endl;
 				}
 				else if (role == 1)
@@ -282,17 +512,39 @@ int main()
 					if (Balli2.speed <= 60)
 						Balli2.speed += 0.1;
 					if (Balli2.speed == 0)
+					{
 						bal2_t.update(b2_anim[0]);
+						sc2_t.update(sc2_anim[0]);
+					}
 					if (Balli2.speed >= 10)
+					{
 						bal2_t.update(b2_anim[1]);
+						sc2_t.update(sc2_anim[1]);
+					}
 					if (Balli2.speed >= 20)
+					{
 						bal2_t.update(b2_anim[2]);
+						sc2_t.update(sc2_anim[2]);
+					}
 					if (Balli2.speed >= 30)
+					{
 						bal2_t.update(b2_anim[3]);
+						sc2_t.update(sc2_anim[3]);
+					}
 					if (Balli2.speed >= 40)
+					{
 						bal2_t.update(b2_anim[4]);
+						sc2_t.update(sc2_anim[4]);
+					}
 					if (Balli2.speed >= 50)
+					{
 						bal2_t.update(b2_anim[5]);
+						sc2_t.update(sc2_anim[5]);
+					}
+					if (Balli2.speed >= 60)
+					{
+						sc2_t.update(sc2_anim[6]);
+					}
 					std::cout << "spd++ = " << Balli2.speed << std::endl;
 				}
 				shoot_fl = 1;
@@ -303,7 +555,7 @@ int main()
 				{
 					if (Balli1.angle <= 1.52)
 						Balli1.angle += 0.005;
-					if ((Balli1.angle >= 0)&&(Balli1.angle < 0.21))
+					if ((Balli1.angle >= 0) && (Balli1.angle < 0.21))
 						d_t.update(d1_anim[0]);
 					if ((Balli1.angle >= 0.21) && (Balli1.angle < 0.65))
 						d_t.update(d1_anim[1]);
@@ -383,40 +635,6 @@ int main()
 					std::cout << "angle-- = " << Balli2.angle * 57.3 << std::endl;
 				}
 			}
-			else if (Keyboard::isKeyPressed(Keyboard::Q))
-			{
-				if (role == 0)
-				{
-					if (Balli1.mass <= 100)
-						Balli1.mass += 5;
-					sleep(t2);
-					std::cout << "mass++ = " << Balli1.mass << std::endl;
-				}
-				else if (role == 1)
-				{
-					if (Balli2.mass <= 100)
-						Balli2.mass += 5;
-					sleep(t2);
-					std::cout << "mass++ = " << Balli2.mass << std::endl;
-				}
-			}
-			else if (Keyboard::isKeyPressed(Keyboard::E))
-			{
-				if (role == 0)
-				{
-					if (Balli1.mass >= 6)
-						Balli1.mass -= 5;
-					sleep(t2);
-					std::cout << "mass-- = " << Balli1.mass << std::endl;
-				}
-				else if (role == 1)
-				{
-					if (Balli2.mass >= 6)
-						Balli2.mass -= 5;
-					sleep(t2);
-					std::cout << "mass-- = " << Balli2.mass << std::endl;
-				}
-			}
 			if ((event.type == sf::Event::KeyReleased) && (event.key.code == sf::Keyboard::Space))
 			{
 				if (shoot_fl == 1)
@@ -424,7 +642,7 @@ int main()
 					if (role == 0)
 					{
 						time = 0;
-						Stone.speed = (Balli1.speed * (50 / Balli1.mass));
+						Stone.speed = (Balli1.speed * (45.0 / Balli1.mass));
 						Stone.angle = Balli1.angle;
 						Stone.mass = Balli1.mass;
 						Stone.xs = Balli1.x + 100;
@@ -433,7 +651,7 @@ int main()
 					else if (role == 1)
 					{
 						time = 0;
-						Stone.speed = (Balli2.speed * (50 / Balli2.mass));
+						Stone.speed = (Balli2.speed * (45.0 / Balli2.mass));
 						Stone.angle = Balli2.angle;
 						Stone.mass = Balli2.mass;
 						Stone.xs = Balli2.x;
@@ -451,30 +669,31 @@ int main()
 					Stone.xc = Stone.xs + Stone.vx * 0.001;
 					Stone.yc = Stone.ys - Stone.vy * 0.001;
 					stone_s.setPosition(Stone.xc, Stone.yc);
+					if (role == 0)
+					{
+						if (time == 0)
+							bal_t.update(b1_anim[6]);
+						if (time == 1.5)
+							bal_t.update(b1_anim[7]);
+						if (time == 3)
+							bal_t.update(b1_anim[8]);
+						if (time == 4.5)
+							bal_t.update(b1_anim[9]);
+					}
+					else
+					{
+						if (time == 0)
+							bal2_t.update(b2_anim[6]);
+						if (time == 1.5)
+							bal2_t.update(b2_anim[7]);
+						if (time == 3)
+							bal2_t.update(b2_anim[8]);
+						if (time == 4.5)
+							bal2_t.update(b2_anim[9]);
+					}
+					time = 0;
 					while (Stone.yc <= FLOOR + 15)
 					{
-						if (role == 0)
-						{
-							if (time == 0)
-								bal_t.update(b1_anim[6]);
-							if (time == 1.5)
-								bal_t.update(b1_anim[7]);
-							if (time == 3)
-								bal_t.update(b1_anim[8]);
-							if (time == 4.5)
-								bal_t.update(b1_anim[9]);
-						}
-						else
-						{
-							if (time == 0)
-								bal2_t.update(b2_anim[6]);
-							if (time == 1.5)
-								bal2_t.update(b2_anim[7]);
-							if (time == 3)
-								bal2_t.update(b2_anim[8]);
-							if (time == 4.5)
-								bal2_t.update(b2_anim[9]);
-						}
 						Stone.xc = Stone.xs + (Stone.vx * time);
 						Stone.yc = Stone.ys - (Stone.vy * time) + ((9.8 * time * time) / 2);
 						stone_s.setPosition(Stone.xc, Stone.yc);
@@ -486,11 +705,13 @@ int main()
 						{
 							draw[2] = draw[0] = false;
 							mode = 2;
+							draw[8] = true;
 						}
 						else if (shoot_fl == 2)
 						{
 							draw[1] = draw[0] = false;
 							mode = 3;
+							draw[9] = true;
 						}
 						window.clear();
 						window.draw(sky_s);
@@ -505,8 +726,15 @@ int main()
 						window.draw(d2_hud);
 						window.draw(sc1_hud);
 						window.draw(sc2_hud);
+						window.draw(pet1_s);
+						window.draw(pet2_s);
+						window.draw(pet1_text);
+						window.draw(pet2_text);
+						st_line.draw(window);
+						if (draw[7] == true)
+							window.draw(Ex_g->getspr());
 						window.display();
-						time += 0.01;
+						time += 0.02;
 						std::cout << shoot_fl << std::endl;
 					}
 					draw[0] = false;
@@ -522,8 +750,19 @@ int main()
 				}
 			}
 		}
+		pet1_text.setString(toString(Balli1.petrol));
+		pet2_text.setString(toString(Balli2.petrol));
 		mous = Mouse::getPosition(window);
-		BattonExit1->mouseChange(window, mous.x, mous.y);
+		Start->mouseChange(window, mous.x, mous.y);
+		if ((mode == 0) || (mode == 4))
+		{
+			Rules->mouseChange(window, mous.x, mous.y);
+			Ex_r->mouseChange(window, mous.x, mous.y);
+		}
+		Ex_g->mouseChange(window, mous.x, mous.y);
+		if (mode == 1)
+			for (int i = 0; i < 4; i++)
+				st_line.mouseChange(window, mous.x, mous.y, i, role);
 		window.clear();
 		window.draw(sky_s);
 		window.draw(fl_s);
@@ -534,17 +773,37 @@ int main()
 		if (draw[0] == true)
 			window.draw(stone_s);
 		if (draw[3] == true)
-			window.draw(BattonExit1->getspr());
-		window.draw(d1_hud);
-		window.draw(d2_hud);
-		window.draw(sc1_hud);
-		window.draw(sc2_hud);
-		window.display();
-		if ((BattonExit1->isPress(window, event.mouseButton.x, event.mouseButton.y)))
+			window.draw(Start->getspr());
+		if (mode == 1)
 		{
-			mode = 1;
-			draw[3] = false;
+			window.draw(d1_hud);
+			window.draw(d2_hud);
+			window.draw(sc1_hud);
+			window.draw(sc2_hud);
+			window.draw(pet1_s);
+			window.draw(pet2_s);
+			window.draw(pet1_text);
+			window.draw(pet2_text);
+			st_line.draw(window);
 		}
+		if (draw[4] == true)
+			window.draw(Rules->getspr());
+		if (draw[5] == true)
+			window.draw(rul_s);
+		if (draw[6] == true)
+			window.draw(Ex_r->getspr());
+		if (draw[7] == true)
+			window.draw(Ex_g->getspr());
+		if ((mode == 2) || (mode == 3))
+		{
+			if (mode == 2)
+				window.draw(w1_s);
+			else
+				window.draw(w2_s);
+			window.draw(Re_g->getspr());
+		}
+		window.display();
+
 	}
 	return 0;
 }

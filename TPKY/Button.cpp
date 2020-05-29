@@ -2,7 +2,7 @@
 #include <iostream>
 bool Button::isPress(RenderWindow& window, int x, int y)
 {
-	if ((x >= xP) && (y >= yP) && (x <= xP+200) && (y <= yP+100))
+	if ((x >= xP) && (y >= yP) && (x <= xP+xL) && (y <= yP+yL))
 		return true;
 	return false;
 }
@@ -16,7 +16,7 @@ Text Button::gettext()
 }
 void Button::mouseChange(RenderWindow& window, int x, int y)
 {
-	if ((x >= xP) && (y >= yP) && (x <= xP + 200) && (y <= yP + 100))
+	if ((x >= xP) && (y >= yP) && (x <= xP + xL) && (y <= yP + yL))
 	{
 		if (state == true)
 		{
@@ -46,12 +46,10 @@ void Button::mouseChange(RenderWindow& window, int x, int y)
 		if (state == true)
 		{
 			m_t1.update(text1);
-			curr.setPosition(xP, yP);
 		}
 		else
 		{
 			m_t1.update(text2);
-			curr.setPosition(xP, yP);
 		}
 
 }
