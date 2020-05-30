@@ -141,7 +141,7 @@
     <ClInclude Include="Button.h" />
     <ClInclude Include="Checker.h" />
     <ClInclude Include="Coll.h" />
-    <ClInclude Include="String.hpp" />
+    <ClInclude Include="Files.h" />
     <ClInclude Include="St_ch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

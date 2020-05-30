@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML\Graphics/Text.hpp>
+#include "Files.h"
 using namespace sf;
 class Button {
 	int xP;
@@ -24,7 +25,7 @@ public:
 		yP = y;
 		xL = w;
 		yL = h;
-		font.loadFromFile("arial.ttf");
+		font.loadFromFile(AF);
 		text1.loadFromFile(first);
 		m_t1.loadFromImage(text1);
 		text2.loadFromFile(second);

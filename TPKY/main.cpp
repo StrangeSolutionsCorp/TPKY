@@ -68,17 +68,17 @@ int main()
 
 	Image ballista1;
 	Image b1_anim[10];
-	ballista1.loadFromFile("Bal/1_1.png");
-	b1_anim[0].loadFromFile("Bal/1_1.png");
-	b1_anim[1].loadFromFile("Bal/1_2.png");
-	b1_anim[2].loadFromFile("Bal/1_3.png");
-	b1_anim[3].loadFromFile("Bal/1_4.png");
-	b1_anim[4].loadFromFile("Bal/1_5.png");
-	b1_anim[5].loadFromFile("Bal/1_6.png");
-	b1_anim[6].loadFromFile("Bal/1_7.png");
-	b1_anim[7].loadFromFile("Bal/1_8.png");
-	b1_anim[6].loadFromFile("Bal/1_9.png");
-	b1_anim[7].loadFromFile("Bal/1_10.png");
+	ballista1.loadFromFile(B11);
+	b1_anim[0].loadFromFile(B11);
+	b1_anim[1].loadFromFile(B12);
+	b1_anim[2].loadFromFile(B13);
+	b1_anim[3].loadFromFile(B14);
+	b1_anim[4].loadFromFile(B15);
+	b1_anim[5].loadFromFile(B16);
+	b1_anim[6].loadFromFile(B17);
+	b1_anim[7].loadFromFile(B18);
+	b1_anim[6].loadFromFile(B19);
+	b1_anim[7].loadFromFile(B110);
 	Texture bal_t;
 	bal_t.loadFromImage(ballista1);
 	Sprite bal1_s;
@@ -93,13 +93,13 @@ int main()
 
 	Image deg_1;
 	Image d1_anim[6];
-	deg_1.loadFromFile("Deg1/degree1.png");
-	d1_anim[0].loadFromFile("Deg1/degree1.png");
-	d1_anim[1].loadFromFile("Deg1/degree1_1.png");
-	d1_anim[2].loadFromFile("Deg1/degree1_2.png");
-	d1_anim[3].loadFromFile("Deg1/degree1_3.png");
-	d1_anim[4].loadFromFile("Deg1/degree1_4.png");
-	d1_anim[5].loadFromFile("Deg1/degree1_5.png");
+	deg_1.loadFromFile(D1);
+	d1_anim[0].loadFromFile(D1);
+	d1_anim[1].loadFromFile(D11);
+	d1_anim[2].loadFromFile(D12);
+	d1_anim[3].loadFromFile(D13);
+	d1_anim[4].loadFromFile(D14);
+	d1_anim[5].loadFromFile(D15);
 	Texture d_t;
 	d_t.loadFromImage(deg_1);
 	Sprite d1_hud;
@@ -108,14 +108,14 @@ int main()
 
 	Image sc_1;
 	Image sc1_anim[7];
-	sc_1.loadFromFile("Scale1/sacle1.png");
-	sc1_anim[0].loadFromFile("Scale1/sacle1.png");
-	sc1_anim[1].loadFromFile("Scale1/sacle1_1.png");
-	sc1_anim[2].loadFromFile("Scale1/sacle1_2.png");
-	sc1_anim[3].loadFromFile("Scale1/sacle1_3.png");
-	sc1_anim[4].loadFromFile("Scale1/sacle1_4.png");
-	sc1_anim[5].loadFromFile("Scale1/sacle1_5.png");
-	sc1_anim[6].loadFromFile("Scale1/sacle1_6.png");
+	sc_1.loadFromFile(S1);
+	sc1_anim[0].loadFromFile(S1);
+	sc1_anim[1].loadFromFile(S11);
+	sc1_anim[2].loadFromFile(S12);
+	sc1_anim[3].loadFromFile(S13);
+	sc1_anim[4].loadFromFile(S14);
+	sc1_anim[5].loadFromFile(S15);
+	sc1_anim[6].loadFromFile(S16);
 	Texture sc_t;
 	sc_t.loadFromImage(sc_1);
 	Sprite sc1_hud;
@@ -124,17 +124,17 @@ int main()
 
 	Image ballista2;
 	Image b2_anim[10];
-	ballista2.loadFromFile("Bal/2_1.png");
-	b2_anim[0].loadFromFile("Bal/2_1.png");
-	b2_anim[1].loadFromFile("Bal/2_2.png");
-	b2_anim[2].loadFromFile("Bal/2_3.png");
-	b2_anim[3].loadFromFile("Bal/2_4.png");
-	b2_anim[4].loadFromFile("Bal/2_5.png");
-	b2_anim[5].loadFromFile("Bal/2_6.png");
-	b2_anim[6].loadFromFile("Bal/2_7.png");
-	b2_anim[7].loadFromFile("Bal/2_8.png");
-	b2_anim[6].loadFromFile("Bal/2_9.png");
-	b2_anim[7].loadFromFile("Bal/2_10.png");
+	ballista2.loadFromFile(B21);
+	b2_anim[0].loadFromFile(B21);
+	b2_anim[1].loadFromFile(B22);
+	b2_anim[2].loadFromFile(B23);
+	b2_anim[3].loadFromFile(B24);
+	b2_anim[4].loadFromFile(B25);
+	b2_anim[5].loadFromFile(B26);
+	b2_anim[6].loadFromFile(B27);
+	b2_anim[7].loadFromFile(B28);
+	b2_anim[6].loadFromFile(B29);
+	b2_anim[7].loadFromFile(B210);
 	Texture bal2_t;
 	bal2_t.loadFromImage(ballista2);
 	Sprite bal2_s;
@@ -149,13 +149,13 @@ int main()
 
 	Image deg_2;
 	Image d2_anim[6];
-	deg_2.loadFromFile("Deg2/degree2.png");
-	d2_anim[0].loadFromFile("Deg2/degree2.png");
-	d2_anim[1].loadFromFile("Deg2/degree2_1.png");
-	d2_anim[2].loadFromFile("Deg2/degree2_2.png");
-	d2_anim[3].loadFromFile("Deg2/degree2_3.png");
-	d2_anim[4].loadFromFile("Deg2/degree2_4.png");
-	d2_anim[5].loadFromFile("Deg2/degree2_5.png");
+	deg_2.loadFromFile(D2);
+	d2_anim[0].loadFromFile(D2);
+	d2_anim[1].loadFromFile(D21);
+	d2_anim[2].loadFromFile(D22);
+	d2_anim[3].loadFromFile(D23);
+	d2_anim[4].loadFromFile(D24);
+	d2_anim[5].loadFromFile(D25);
 	Texture d2_t;
 	d2_t.loadFromImage(deg_2);
 	Sprite d2_hud;
@@ -164,14 +164,14 @@ int main()
 
 	Image sc_2;
 	Image sc2_anim[7];
-	sc_2.loadFromFile("Scale2/scale2.png");
-	sc2_anim[0].loadFromFile("Scale2/scale2.png");
-	sc2_anim[1].loadFromFile("Scale2/scale2_1.png");
-	sc2_anim[2].loadFromFile("Scale2/scale2_2.png");
-	sc2_anim[3].loadFromFile("Scale2/scale2_3.png");
-	sc2_anim[4].loadFromFile("Scale2/scale2_4.png");
-	sc2_anim[5].loadFromFile("Scale2/scale2_5.png");
-	sc2_anim[6].loadFromFile("Scale2/scale2_6.png");
+	sc_2.loadFromFile(S2);
+	sc2_anim[0].loadFromFile(S2);
+	sc2_anim[1].loadFromFile(S21);
+	sc2_anim[2].loadFromFile(S22);
+	sc2_anim[3].loadFromFile(S23);
+	sc2_anim[4].loadFromFile(S24);
+	sc2_anim[5].loadFromFile(S25);
+	sc2_anim[6].loadFromFile(S26);
 	Texture sc2_t;
 	sc2_t.loadFromImage(sc_2);
 	Sprite sc2_hud;
@@ -179,14 +179,14 @@ int main()
 	sc2_hud.setPosition(1150, 170);
 
 	Image stone;
-	stone.loadFromFile("stone1.png");
+	stone.loadFromFile(ST1);
 	Texture stone_t;
 	stone_t.loadFromImage(stone);
 	Sprite stone_s;
 	stone_s.setTexture(stone_t);
 
 	Image fl;
-	fl.loadFromFile("floor.png");
+	fl.loadFromFile(FL);
 	Texture fl_t;
 	fl_t.loadFromImage(fl);
 	Sprite fl_s;
@@ -195,7 +195,7 @@ int main()
 	fl_s.setScale(1.5, 1.5);
 
 	Image sky;
-	sky.loadFromFile("sky.png");
+	sky.loadFromFile(SK);
 	Texture sky_t;
 	sky_t.loadFromImage(sky);
 	Sprite sky_s;
@@ -203,7 +203,7 @@ int main()
 	sky_s.setPosition(0, 0);
 
 	Image pet1;
-	pet1.loadFromFile("petrol1.png");
+	pet1.loadFromFile(P1);
 	Texture pet1_t;
 	pet1_t.loadFromImage(pet1);
 	Sprite pet1_s;
@@ -213,7 +213,7 @@ int main()
 	Text pet1_text;
 
 	Image pet2;
-	pet2.loadFromFile("petrol2.png");
+	pet2.loadFromFile(P2);
 	Texture pet2_t;
 	pet2_t.loadFromImage(pet2);
 	Sprite pet2_s;
@@ -223,7 +223,7 @@ int main()
 	Text pet2_text;
 
 	Font font;
-	font.loadFromFile("arial.ttf");
+	font.loadFromFile(AF);
 	pet1_text.setFont(font);
 	pet1_text.setString("100");
 	pet1_text.setCharacterSize(25);
@@ -236,7 +236,7 @@ int main()
 	pet2_text.setPosition(1140, 10);
 
 	Image rul;
-	rul.loadFromFile("rul.png");
+	rul.loadFromFile(RUL);
 	Texture rul_t;
 	rul_t.loadFromImage(rul);
 	Sprite rul_s;
@@ -244,7 +244,7 @@ int main()
 	rul_s.setPosition(250, 50);
 
 	Image w1;
-	w1.loadFromFile("w1.png");
+	w1.loadFromFile(W1);
 	Texture w1_t;
 	w1_t.loadFromImage(w1);
 	Sprite w1_s;
@@ -252,7 +252,7 @@ int main()
 	w1_s.setPosition(250, 50);
 
 	Image w2;
-	w1.loadFromFile("w2.png");
+	w1.loadFromFile(W2);
 	Texture w2_t;
 	w2_t.loadFromImage(w1);
 	Sprite w2_s;
@@ -260,15 +260,15 @@ int main()
 	w2_s.setPosition(250, 50);
 
 	Button* Start;
-	Start = new Button(500, 100, "bu2.png", "bu1.png", "Test", 200, 100);
+	Start = new Button(500, 100, BU2, BU1, "Test", 200, 100);
 	Button* Rules;
-	Rules = new Button(500, 225, "bu4.png", "bu3.png", "Test", 200, 100);
+	Rules = new Button(500, 225, BU4, BU3, "Test", 200, 100);
 	Button* Ex_r;
-	Ex_r = new Button(950, 50, "bu6.png", "bu5.png", "Test", 50, 50);
+	Ex_r = new Button(950, 50, BU6, BU5, "Test", 50, 50);
 	Button* Ex_g;
-	Ex_g = new Button(0, 0, "bu6.png", "bu5.png", "Test", 50, 50);
+	Ex_g = new Button(0, 0, BU6, BU6, "Test", 50, 50);
 	Button* Re_g;
-	Re_g = new Button(600, FLOOR, "bu8.png", "bu7.png", "Test", 200, 100);
+	Re_g = new Button(600, FLOOR, BU8, BU7, "Test", 200, 100);
 
 	Vector2i mous;
 	Text tecst;

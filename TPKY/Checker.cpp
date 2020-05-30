@@ -7,323 +7,413 @@ int checker()
 	ifstream file; // создаем объект класса ifstream
 	try
 	{
-		file.open("Bal/1_1.png");
+		file.open(B11);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Bal/1_2.png");
+		file.open(B12);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Bal/1_3.png");
+		file.open(B13);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Bal/1_4.png");
+		file.open(B14);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Bal/1_5.png");
+		file.open(B15);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Bal/1_6.png");
+		file.open(B16);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Bal/1_7.png");
+		file.open(B17);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Bal/1_8.png");
+		file.open(B18);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Bal/1_9.png");
+		file.open(B19);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Bal/1_10.png");
-		if (file.fail()) {
-			throw 1;
-		}
-		file.close();
-
-		file.open("Deg1/degree1.png");
-		if (file.fail()) {
-			throw 1;
-		}
-		file.close();
-		file.open("Deg1/degree1_1.png");
-		if (file.fail()) {
-			throw 1;
-		}
-		file.close();
-		file.open("Deg1/degree1_2.png");
-		if (file.fail()) {
-			throw 1;
-		}
-		file.close();
-		file.open("Deg1/degree1_3.png");
-		if (file.fail()) {
-			throw 1;
-		}
-		file.close();
-		file.open("Deg1/degree1_4.png");
-		if (file.fail()) {
-			throw 1;
-		}
-		file.close();
-		file.open("Deg1/degree1_5.png");
+		file.open(B110);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
 
-		file.open("Scale1/sacle1.png");
+		file.open(D1);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Scale1/sacle1_1.png");
+		file.open(D11);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Scale1/sacle1_2.png");
+		file.open(D12);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Scale1/sacle1_3.png");
+		file.open(D13);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Scale1/sacle1_4.png");
+		file.open(D14);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Scale1/sacle1_5.png");
-		if (file.fail()) {
-			throw 1;
-		}
-		file.close();
-		file.open("Scale1/sacle1_6.png");
+		file.open(D15);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
 
-		file.open("Bal/2_1.png");
+		file.open(S1);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Bal/2_2.png");
+		file.open(S11);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Bal/2_3.png");
+		file.open(S12);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Bal/2_4.png");
+		file.open(S13);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Bal/2_5.png");
+		file.open(S14);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Bal/2_6.png");
+		file.open(S15);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Bal/2_7.png");
-		if (file.fail()) {
-			throw 1;
-		}
-		file.close();
-		file.open("Bal/2_8.png");
-		if (file.fail()) {
-			throw 1;
-		}
-		file.close();
-		file.open("Bal/2_9.png");
-		if (file.fail()) {
-			throw 1;
-		}
-		file.close();
-		file.open("Bal/2_10.png");
+		file.open(S16);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
 
-		file.open("Deg2/degree2.png");
+		file.open(B21);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Deg2/degree2_1.png");
+		file.open(B22);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Deg2/degree2_2.png");
+		file.open(B23);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Deg2/degree2_3.png");
+		file.open(B24);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Deg2/degree2_4.png");
+		file.open(B25);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Deg2/degree2_5.png");
+		file.open(B26);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-
-		file.open("Scale2/scale2.png");
+		file.open(B27);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Scale2/scale2_1.png");
+		file.open(B28);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Scale2/scale2_2.png");
+		file.open(B29);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("Scale2/scale2_3.png");
-		if (file.fail()) {
-			throw 1;
-		}
-		file.close();
-		file.open("Scale2/scale2_4.png");
-		if (file.fail()) {
-			throw 1;
-		}
-		file.close();
-		file.open("Scale2/scale2_5.png");
-		if (file.fail()) {
-			throw 1;
-		}
-		file.close();
-		file.open("Scale2/scale2_6.png");
+		file.open(B210);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
 
-		file.open("stone1.png");
+		file.open(D2);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("floor.png");
+		file.open(D21);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("petrol1.png");
+		file.open(D22);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("petrol2.png");
+		file.open(D23);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("arial.ttf");
+		file.open(D24);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("rul.png");
-		if (file.fail()) {
-			throw 1;
-		}
-		file.close();
-		file.open("w1.png");
-		if (file.fail()) {
-			throw 1;
-		}
-		file.close();
-		file.open("w2.png");
+		file.open(D25);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
 
-		file.open("bu1.png");
+		file.open(S2);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("bu2.png");
+		file.open(S21);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("bu3.png");
+		file.open(S22);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("bu4.png");
+		file.open(S23);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("bu5.png");
+		file.open(S24);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("bu6.png");
+		file.open(S25);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("bu7.png");
+		file.open(S26);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
-		file.open("bu8.png");
+
+		file.open(ST1);
 		if (file.fail()) {
 			throw 1;
 		}
 		file.close();
+		file.open(FL);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(SK);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(P1);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(P2);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(AF);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(RUL);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(W1);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(W2);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+
+		file.open(BU1);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(BU2);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(BU3);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(BU4);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(BU5);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(BU6);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(BU7);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(BU8);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+
+		file.open(STP1);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(STP12);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(STP13);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(STP14);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+
+		file.open(STP2);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(STP22);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(STP23);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(STP24);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+
+		file.open(STP3);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(STP32);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(STP33);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(STP34);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+
+		file.open(STP4);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(STP42);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(STP43);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+		file.open(STP44);
+		if (file.fail()) {
+			throw 1;
+		}
+		file.close();
+
 	}
 	catch(int)
 	{
