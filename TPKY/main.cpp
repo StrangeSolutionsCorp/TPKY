@@ -442,7 +442,7 @@ int main()
 				{
 					if (Balli1.petrol >= 2.5)
 					{
-						if (Balli1.x >= 1)
+						if (Balli1.x <= 1300)
 						{
 							bal1_s.move(0.5, 0);
 							Balli1.x += 0.5;
@@ -455,7 +455,7 @@ int main()
 				{
 					if (Balli2.petrol >= 2.5)
 					{
-						if (Balli1.x >= 1)
+						if (Balli1.x <= 1300)
 						{
 							bal2_s.move(0.5, 0);
 							Balli2.x += 0.5;
@@ -736,6 +736,8 @@ int main()
 						window.display();
 						time += 0.02;
 						std::cout << shoot_fl << std::endl;
+						if ((Stone.xc <= 0) || (Stone.xc >= WIGHT) || (Stone.yc <= 0))
+							break;
 					}
 					draw[0] = false;
 					shoot_fl = 0;
