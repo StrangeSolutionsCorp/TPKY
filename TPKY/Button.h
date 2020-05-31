@@ -4,7 +4,8 @@
 #include <SFML\Graphics/Text.hpp>
 #include "Files.h"
 using namespace sf;
-class Button {
+class Button 
+{
 	int xP;
 	int yP;
 	int xL;

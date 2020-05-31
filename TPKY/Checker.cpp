@@ -4,7 +4,7 @@ using namespace std;
 int checker()
 {
 	int res;
-	ifstream file; // создаем объект класса ifstream
+	ifstream file; 
 	try
 	{
 		file.open(B11);

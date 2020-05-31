@@ -1,7 +1,5 @@
 #pragma once
 
-#ifndef Files
-
 #define B11 "Bal/1_1.png"
 #define B12 "Bal/1_2.png"
 #define B13 "Bal/1_3.png"
@@ -92,5 +90,3 @@
 #define STP42 "Stone pallete/4_2.png"
 #define STP43 "Stone pallete/4_3.png"
 #define STP44 "Stone pallete/4_4.png"
-
-#endif
