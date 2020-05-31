@@ -11,7 +11,7 @@ int collision(Sprite* stone, Sprite* bal, int role)
 	{
 	case 0:
 	{
-		if ((coord1.x >= (coord2.x-10.0)) && (coord1.x <= (coord2.x + 150.0)) && (coord1.y >= (coord2.y+10)) && ((coord1.y <= (coord2.y + 50.0))))
+		if ((coord1.x >= (coord2.x-10.0)) && (coord1.x <= (coord2.x + 150.0)) && (coord1.y >= (coord2.y-10)) && ((coord1.y <= (coord2.y + 75.0))))
 			return 1;
 		else
 			return 3;
@@ -19,7 +19,7 @@ int collision(Sprite* stone, Sprite* bal, int role)
 		break;
 	case 1:
 	{
-		if ((coord1.x >= (coord2.x-10.0)) && (coord1.x <= (coord2.x + 150.0)) && (coord1.y >= (coord2.y+10)) && ((coord1.y <= (coord2.y + 50.0))))
+		if ((coord1.x >= (coord2.x-10.0)) && (coord1.x <= (coord2.x + 150.0)) && (coord1.y >= (coord2.y-10)) && ((coord1.y <= (coord2.y + 75.0))))
 			return 2;
 		else
 			return 3;

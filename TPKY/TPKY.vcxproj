@@ -135,6 +135,7 @@
     <ClCompile Include="Checker.cpp" />
     <ClCompile Include="Coll.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Stone.cpp" />
     <ClCompile Include="St_ch.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +143,7 @@
     <ClInclude Include="Checker.h" />
     <ClInclude Include="Coll.h" />
     <ClInclude Include="Files.h" />
+    <ClInclude Include="Stone.h" />
     <ClInclude Include="St_ch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

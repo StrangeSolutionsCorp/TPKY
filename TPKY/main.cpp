@@ -8,6 +8,7 @@
 #include <dos.h>
 #include "Button.h"
 #include "Coll.h"
+#include "Stone.h"
 #include "St_ch.h"
 #include <SFML\Window/Mouse.hpp>
 #include <SFML\Graphics/Text.hpp>
@@ -31,20 +32,6 @@ public:
 	float petrol;
 };
 
-class stone
-{
-public:
-	double xs;
-	double ys;
-	float xc;
-	float yc;
-	float vy;
-	float vx;
-	float mass;
-	float speed;
-	float angle;
-};
-
 String toString(Int64 integer)
 {
 	std::ostringstream os;
@@ -62,7 +49,8 @@ int main()
 	RenderWindow window(VideoMode(WIGHT, HEIGHT), "TEST");
 	int actwind = 0;
 
-	stone Stone;
+	stone_c* Stone_cl;
+	Stone_cl = Stone_cl->create(0,0,0,0,0);
 	ballista Balli1;
 	ballista Balli2;
 
@@ -266,7 +254,7 @@ int main()
 	Button* Ex_r;
 	Ex_r = new Button(950, 50, BU6, BU5, "Test", 50, 50);
 	Button* Ex_g;
-	Ex_g = new Button(0, 0, BU6, BU6, "Test", 50, 50);
+	Ex_g = new Button(0, 0, BU6, BU5, "Test", 50, 50);
 	Button* Re_g;
 	Re_g = new Button(600, FLOOR, BU8, BU7, "Test", 200, 100);
 
@@ -280,7 +268,6 @@ int main()
 	bool role = 0;
 	int coolider;
 	int mode = 0;
-	Time t2 = milliseconds(250);
 	int mas_res;
 
 	bool draw[11] = {false, true, true, true, true, false, false, true, false, false, false};
@@ -641,34 +628,26 @@ int main()
 				{
 					if (role == 0)
 					{
+						Stone_cl = Stone_cl->create((Balli1.x + 100), (Balli1.y - 15), Balli1.mass, (Balli1.speed* (45.0 / Balli1.mass)), Balli1.angle);
 						time = 0;
-						Stone.speed = (Balli1.speed * (45.0 / Balli1.mass));
-						Stone.angle = Balli1.angle;
-						Stone.mass = Balli1.mass;
-						Stone.xs = Balli1.x + 100;
-						Stone.ys = Balli1.y - 15;
 					}
 					else if (role == 1)
 					{
+						Stone_cl = Stone_cl->create((Balli2.x), (Balli2.y - 15), Balli2.mass, (Balli2.speed * (45.0 / Balli2.mass)), Balli2.angle);
 						time = 0;
-						Stone.speed = (Balli2.speed * (45.0 / Balli2.mass));
-						Stone.angle = Balli2.angle;
-						Stone.mass = Balli2.mass;
-						Stone.xs = Balli2.x;
-						Stone.ys = Balli2.y - 15;
 					}
-					stone_s.setPosition(Stone.xs, Stone.ys);
+					stone_s.setPosition(Stone_cl->xs, Stone_cl->ys);
 					draw[0] = true;
-					Stone.vx = Stone.vy = 0;
+					Stone_cl->vx = Stone_cl->vy = 0;
 					if (role == 0)
-						Stone.vx = Stone.speed * cos(Stone.angle);
+						Stone_cl->vx = Stone_cl->speed * cos(Stone_cl->angle);
 					else if (role == 1)
-						Stone.vx = -(Stone.speed * cos(Stone.angle));
-					Stone.vy = Stone.speed * sin(Stone.angle);
-					Stone.xc = Stone.yc = 0;
-					Stone.xc = Stone.xs + Stone.vx * 0.001;
-					Stone.yc = Stone.ys - Stone.vy * 0.001;
-					stone_s.setPosition(Stone.xc, Stone.yc);
+						Stone_cl->vx = -(Stone_cl->speed * cos(Stone_cl->angle));
+					Stone_cl->vy = Stone_cl->speed * sin(Stone_cl->angle);
+					Stone_cl->xc = Stone_cl->yc = 0;
+					Stone_cl->xc = Stone_cl->xs + Stone_cl->vx * 0.001;
+					Stone_cl->yc = Stone_cl->ys - Stone_cl->vy * 0.001;
+					stone_s.setPosition(Stone_cl->xc, Stone_cl->yc);
 					if (role == 0)
 					{
 						if (time == 0)
@@ -692,11 +671,11 @@ int main()
 							bal2_t.update(b2_anim[9]);
 					}
 					time = 0;
-					while (Stone.yc <= FLOOR + 15)
+					while (Stone_cl->yc <= FLOOR + 15)
 					{
-						Stone.xc = Stone.xs + (Stone.vx * time);
-						Stone.yc = Stone.ys - (Stone.vy * time) + ((9.8 * time * time) / 2);
-						stone_s.setPosition(Stone.xc, Stone.yc);
+						Stone_cl->xc = Stone_cl->xs + (Stone_cl->vx * time);
+						Stone_cl->yc = Stone_cl->ys - (Stone_cl->vy * time) + ((9.8 * time * time) / 2);
+						stone_s.setPosition(Stone_cl->xc, Stone_cl->yc);
 						if (role == 0)
 							shoot_fl = collision(&stone_s, &bal2_s, role);
 						else
@@ -736,7 +715,7 @@ int main()
 						window.display();
 						time += 0.02;
 						std::cout << shoot_fl << std::endl;
-						if ((Stone.xc <= 0) || (Stone.xc >= WIGHT) || (Stone.yc <= 0))
+						if ((Stone_cl->xc <= 0) || (Stone_cl->xc >= WIGHT))
 							break;
 					}
 					draw[0] = false;
@@ -761,6 +740,8 @@ int main()
 			Rules->mouseChange(window, mous.x, mous.y);
 			Ex_r->mouseChange(window, mous.x, mous.y);
 		}
+		if ((mode == 2) || (mode == 3))
+			Re_g->mouseChange(window, mous.x, mous.y);
 		Ex_g->mouseChange(window, mous.x, mous.y);
 		if (mode == 1)
 			for (int i = 0; i < 4; i++)
